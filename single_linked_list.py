@@ -100,6 +100,20 @@ class Linked_list:
         
         return current
 
+    def node_at_index(self, index):
+        
+        if index == 0:
+            return self.head
+        else:
+            current = self.head
+            position = 0
+
+            while position < index:
+                current = current.next_node
+                position += 1
+            
+            return current
+
     def __repr__(self):
 
         nodes = []
@@ -141,6 +155,6 @@ linked_list = Linked_list()
 linked_list.head = N1
 linked_list.add(1)
 linked_list.insert(4, 1)
-print(linked_list.size())
-print(linked_list)
-print(linked_list.search(10))
+#print(linked_list.size())
+#print(linked_list)
+#print(linked_list.search(10))
