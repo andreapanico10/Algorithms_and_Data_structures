@@ -1,9 +1,5 @@
 from single_linked_list import Linked_list
 
-linked_list = Linked_list()
-linked_list.add(1)
-print(linked_list)
-
 def merge_sort(linked_list):
     '''
     Sort a linked list in ascending order
@@ -14,7 +10,7 @@ def merge_sort(linked_list):
     Runs in O(kn log n)
     
     '''
-#Takes overall O(n log n ) time
+    #Takes overall O(n log n ) time
     if linked_list.size() == 1:
         return linked_list
     
@@ -54,8 +50,7 @@ def split_linked_list(linked_list):
         right_half.head = mid_node.next_node
         #Break the connection for the left half
         mid_node.next_node = None
-
-
+        return left_half, right_half
 
 def merge(left, right):
 
@@ -115,11 +110,11 @@ def merge(left, right):
         # Move current to next_node
         current = current.next_node
 
-        # Discard fake head and set first merged node as head
-        head = merged.head.next_node
-        merged.head = head
+    # Discard fake head and set first merged node as head
+    head = merged.head.next_node
+    merged.head = head
 
-        return merged    
+    return merged    
 
 def recursive_verify_sorted(list):
     n = len(list)
@@ -141,4 +136,4 @@ print(linked_list)
 sorted_linked_list = merge_sort(linked_list)
 print(sorted_linked_list)
 
-#print(recursive_verify_sorted(array))
+#print(recursive_verify_sorted(sorted_linked_list))

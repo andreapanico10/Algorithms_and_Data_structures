@@ -1,3 +1,8 @@
+import random
+import numpy as np
+
+array = list(np.random.randint(0, 100, size=10000))
+
 def find_minimum(array):
     
     minimum = array[0]
@@ -10,8 +15,13 @@ def find_minimum(array):
     return minimum_idx
 
 def selection_sort(array):
-    new_array = []
+    sorted_array = []
+    #print("%-35s %-35s" % (array, sorted_array))
     for i in range(len(array)):
         minimum = find_minimum(array)
-        new_array.append(array.pop(minimum))
-    return new_array
+        sorted_array.append(array.pop(minimum))
+        #print("%-35s %-35s" % (array, sorted_array))
+    return sorted_array
+
+
+print (selection_sort(array))

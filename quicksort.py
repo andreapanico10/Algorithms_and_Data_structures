@@ -1,4 +1,7 @@
 import random 
+import numpy as np
+
+array = np.random.randint(0, 100, size=10)
 
 def quicksort(array):
     
@@ -12,7 +15,7 @@ def quicksort(array):
         less = [i for i in array[:random_position] if i <= pivot] + [i for i in array[random_position+1:] if i <= pivot]
         greater = [i for i in array[:random_position] if i > pivot] + [i for i in array[random_position+1:] if i > pivot]
 
+        #print("%15s %1s %-15s" % (less, pivot, greater))
         return quicksort(less) + [pivot] + quicksort(greater)
 
-array = [2, 10, 5, 15, 1, 0, 12]
 print(quicksort(array))
